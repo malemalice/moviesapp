@@ -20,4 +20,11 @@
            </a>
        </li>
    @endif
+   @if (Auth::user()->can('manage', \App\Models\Genre::class))
+      <li class="{{ \App\Utils::checkRoute(['admin::genre.index', 'admin::genre.create']) ? 'active': '' }}">
+          <a href="{{ route('admin::genre.index') }}">
+              <i class="fa fa-tags"></i> <span>Genre</span>
+          </a>
+      </li>
+  @endif
 </ul>

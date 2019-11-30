@@ -98,6 +98,12 @@ Route::group(['middleware' => 'auth'], function () {
              * // Routes name "admin.movies.*"
              */
             Route::resource('movies', 'MoviesController');
+
+            /**
+             * Manage Genre.
+             * // Routes name "admin.genre.*"
+             */
+            Route::resource('genre', 'GenreController');
         });
     });
 
