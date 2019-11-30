@@ -6,7 +6,7 @@
         <div class="user-panel">
             <div class="pull-left image">
                 <a href="{{ route('dashboard::profile') }}">
-                    <img src="{{ Auth::user()->getLogoPath() }}" class="img-circle" alt="{{ Auth::user()->name }}">
+                    <img src="{{ URL::to('/').Auth::user()->getLogoPath() }}" class="img-circle" alt="{{ Auth::user()->name }}">
                 </a>
             </div>
             <div class="pull-left info">

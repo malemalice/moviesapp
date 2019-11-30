@@ -13,4 +13,11 @@
             </a>
         </li>
     @endif
+    @if (Auth::user()->can('manage', \App\Models\Movies::class))
+       <li class="{{ \App\Utils::checkRoute(['admin::movies.index', 'admin::movies.create']) ? 'active': '' }}">
+           <a href="{{ route('admin::movies.index') }}">
+               <i class="fa fa-tags"></i> <span>Movies</span>
+           </a>
+       </li>
+   @endif
 </ul>

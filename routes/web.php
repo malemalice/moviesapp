@@ -92,6 +92,12 @@ Route::group(['middleware' => 'auth'], function () {
              * // Routes name "admin.users.*"
              */
             Route::resource('users', 'UsersController');
+
+            /**
+             * Manage Movies.
+             * // Routes name "admin.movies.*"
+             */
+            Route::resource('movies', 'MoviesController');
         });
     });
 

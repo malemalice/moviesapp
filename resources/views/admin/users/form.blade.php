@@ -83,7 +83,7 @@
                     <ul class="logo-number users-list clearfix">
                     @foreach (\App\Utils::getLogosNumber() as $logoNumber)
                         <li>
-                            <img class="profile-user-img img-responsive img-circle" src="{{ \App\Utils::logoPath($logoNumber) }}" alt="Profile picture {{ $logoNumber }}">
+                            <img class="profile-user-img img-responsive img-circle" src="{{ URL::to('/').\App\Utils::logoPath($logoNumber) }}" alt="Profile picture {{ $logoNumber }}">
                             <span class="users-list-date">
                                 <input type="radio" name="logo_number" value="{{ $logoNumber }}" {{ old('logo_number', $record->logo_number) == $logoNumber ? 'checked' : '' }}>
                             </span>
