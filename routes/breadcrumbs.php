@@ -52,6 +52,7 @@ $resources = [
     'users' => 'Users',
     'movies' => 'Movies',
     'genre' => 'Genre',
+    'lending' => 'Lending',
 ];
 foreach ($resources as $resource => $data) {
     $parent = 'admin';

@@ -56,7 +56,7 @@ trait ResourceController
             'resourceAlias' => $this->getResourceAlias(),
             'resourceRoutesAlias' => $this->getResourceRoutesAlias(),
             'resourceTitle' => $this->getResourceTitle(),
-            'resourceData' => method_exists($this,'createData')?$this->createData():null
+            'resourceData' => method_exists($this,'viewData')?$this->viewData():null
         ]));
     }
 
@@ -114,7 +114,7 @@ trait ResourceController
             'resourceAlias' => $this->getResourceAlias(),
             'resourceRoutesAlias' => $this->getResourceRoutesAlias(),
             'resourceTitle' => $this->getResourceTitle(),
-            'resourceData' => method_exists($this,'createData')?$this->createData():null
+            'resourceData' => method_exists($this,'viewData')?$this->viewData():null
         ]));
     }
 

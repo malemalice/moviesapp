@@ -2,37 +2,38 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Lending;
 use App\Models\Movies;
-use App\Models\Genre;
+use App\User;
 use App\Traits\Controllers\ResourceController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class MoviesController extends Controller
+class LendingController extends Controller
 {
     use ResourceController;
 
     /**
      * @var string
      */
-    protected $resourceAlias = 'admin.movies';
+    protected $resourceAlias = 'admin.lending';
 
     /**
      * @var string
      */
-    protected $resourceRoutesAlias = 'admin::movies';
+    protected $resourceRoutesAlias = 'admin::lending';
 
     /**
      * Fully qualified class name
      *
      * @var string
      */
-    protected $resourceModel = Movies::class;
+    protected $resourceModel = Lending::class;
 
     /**
      * @var string
      */
-    protected $resourceTitle = 'Movies';
+    protected $resourceTitle = 'Lending';
 
      /**
      * Used to validate store.
@@ -43,8 +44,10 @@ class MoviesController extends Controller
     {
         return [
             'rules' => [
-                'name' => 'required|min:3|max:255',
-                'date_released' => 'required'
+                'member_id' => 'required',
+                'movies_id' => 'required',
+                'date_lending' => 'required',
+                'date_returned' => 'required',
             ],
             'messages' => [],
             'attributes' => [],
@@ -70,7 +73,7 @@ class MoviesController extends Controller
     private function getValuesToSave(Request $request, $record = null)
     {
         $values = $request->only([
-            'name', 'date_released','genre_id'
+            'member_id', 'movies_id', 'date_lending', 'date_returned'
         ]);
 
         return $values;
@@ -95,7 +98,8 @@ class MoviesController extends Controller
 
     private function viewData(){
         return [
-            'optGenre'=>Genre::all()->pluck('name')->toArray()
+            'optMovies'=>Movies::all()->pluck('name')->toArray(),
+            'optUsers'=>Movies::all()->pluck('name')->toArray()
         ];
     }
 }
