@@ -1,4 +1,3 @@
-/* form.blade.php */
 <div class="col-md-12">
     <div class="form-group margin-b-5 margin-t-5{{ $errors->has('name') ? ' has-error' : '' }}">
         <label for="name">Name *</label>
