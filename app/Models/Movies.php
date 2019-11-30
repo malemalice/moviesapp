@@ -26,4 +26,9 @@ class Movies extends Model
     {
         return $this->name;
     }
+
+    public function genre()
+    {
+        return $this->belongsTo('App\Models\Genre', 'genre_id');
+    }
 }
