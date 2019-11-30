@@ -109,7 +109,7 @@ Route::group(['middleware' => 'auth'], function () {
              * Manage Lending.
              * // Routes name "admin.lending.*"
              */
-            Route::resource('genre', 'LendingController');
+            Route::resource('lending', 'LendingController');
         });
     });
 

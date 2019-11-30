@@ -95,7 +95,7 @@ class MoviesController extends Controller
 
     private function viewData(){
         return [
-            'optGenre'=>Genre::all()->pluck('name')->toArray()
+            'optGenre'=>Genre::all()->pluck('name','id')->toArray()
         ];
     }
 }

@@ -71,8 +71,8 @@ trait ResourceController
     public function store(Request $request)
     {
         $this->authorize('create', $this->getResourceModel());
-
         $valuesToSave = $this->getValuesToSave($request);
+
         $request->merge($valuesToSave);
         $this->resourceValidate($request, 'store');
         if ($record = $this->getResourceModel()::create($this->alterValuesToSave($request, $valuesToSave))) {

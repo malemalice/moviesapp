@@ -26,10 +26,6 @@
         <!-- datetimepicker -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
 
-        <!-- jQuery 3 -->
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <!-- jQuery 3 -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
         <!-- EXTRAS -->
         @stack('head-scripts')
 
@@ -108,6 +104,8 @@
         </div>
         <!-- ./wrapper -->
 
+        <!-- jQuery 3 -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
         <!-- Bootstrap 3.3.7 -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

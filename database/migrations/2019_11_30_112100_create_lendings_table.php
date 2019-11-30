@@ -16,7 +16,8 @@ class CreateLendingsTable extends Migration
         Schema::create('lendings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('movies_id');
-            $table->string('lending_id');
+            $table->string('member_id');
+            $table->date('date_lending');
             $table->date('date_returned');
             $table->float('lateness_charge');
             $table->timestamps();

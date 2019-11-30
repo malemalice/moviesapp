@@ -76,7 +76,7 @@ $(function () {
     //Initialize Datetimepicker Elements
     $('input.datetimepicker').datetimepicker({
         //locale: 'es', locale: 'en',
-        format: 'YYYY/MM/DD h:mm A',
+        format: 'YYYY-MM-DD',
         showTodayButton: true,
         showClear: true,
         icons: {

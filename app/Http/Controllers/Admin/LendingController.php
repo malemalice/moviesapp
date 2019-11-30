@@ -98,8 +98,8 @@ class LendingController extends Controller
 
     private function viewData(){
         return [
-            'optMovies'=>Movies::all()->pluck('name')->toArray(),
-            'optUsers'=>Movies::all()->pluck('name')->toArray()
+            'optMovies'=>Movies::all()->pluck('name','id')->toArray(),
+            'optMembers'=>User::all()->pluck('name','id')->toArray()
         ];
     }
 }

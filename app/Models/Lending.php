@@ -15,7 +15,7 @@ class Lending extends Model
      * @var array
      */
     protected $fillable = [
-        'movies_id', 'member_id', 'date_lending', 'returned_date', 'lateness_charge'
+        'movies_id', 'member_id', 'date_lending', 'date_returned', 'lateness_charge'
     ];
 
     /**
