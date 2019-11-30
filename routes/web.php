@@ -13,6 +13,13 @@
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
 
+Route::get('/movies', 'PublicMoviesController@index');
+Route::get('/movies/data', 'PublicMoviesController@data');
+
+// Route::group(['prefix' => 'movies', 'namespace' => 'Movies', 'as' => 'movies::'], function () {
+//     Route::get('/', 'PublicMoviesController@index');
+//     Route::get('/data', 'PublicMoviesController@data');
+// });
 /**
  * Register the typical authentication routes for an application.
  * Replacing: Auth::routes();
@@ -92,6 +99,24 @@ Route::group(['middleware' => 'auth'], function () {
              * // Routes name "admin.users.*"
              */
             Route::resource('users', 'UsersController');
+
+            /**
+             * Manage Movies.
+             * // Routes name "admin.movies.*"
+             */
+            Route::resource('movies', 'MoviesController');
+
+            /**
+             * Manage Genre.
+             * // Routes name "admin.genre.*"
+             */
+            Route::resource('genre', 'GenreController');
+
+            /**
+             * Manage Lending.
+             * // Routes name "admin.lending.*"
+             */
+            Route::resource('lending', 'LendingController');
         });
     });
 

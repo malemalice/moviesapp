@@ -30,7 +30,7 @@ $_pageSubtitle = '';
             <!-- Profile Image -->
             <div class="box box-primary">
                 <div class="box-body box-profile">
-                    <img class="profile-user-img img-responsive img-circle" src="{{ Auth::user()->getLogoPath() }}" alt="User profile picture">
+                    <img class="profile-user-img img-responsive img-circle" src="{{ URL::to('/').Auth::user()->getLogoPath() }}" alt="User profile picture">
 
                     <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
 
@@ -112,7 +112,7 @@ $_pageSubtitle = '';
                                             <ul class="logo-number users-list clearfix">
                                             @foreach (\App\Utils::getLogosNumber() as $logoNumber)
                                                 <li>
-                                                    <img class="profile-user-img img-responsive img-circle" src="{{ \App\Utils::logoPath($logoNumber) }}" alt="Profile picture {{ $logoNumber }}">
+                                                    <img class="profile-user-img img-responsive img-circle" src="{{ URL::to('/').\App\Utils::logoPath($logoNumber) }}" alt="Profile picture {{ $logoNumber }}">
                                                     <span class="users-list-date">
                                                         <input type="radio" name="logo_number" value="{{ $logoNumber }}" {{ old('logo_number', Auth::user()->logo_number) == $logoNumber ? 'checked' : '' }}>
                                                     </span>

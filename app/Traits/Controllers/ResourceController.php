@@ -56,6 +56,7 @@ trait ResourceController
             'resourceAlias' => $this->getResourceAlias(),
             'resourceRoutesAlias' => $this->getResourceRoutesAlias(),
             'resourceTitle' => $this->getResourceTitle(),
+            'resourceData' => method_exists($this,'viewData')?$this->viewData():null
         ]));
     }
 
@@ -70,14 +71,12 @@ trait ResourceController
     public function store(Request $request)
     {
         $this->authorize('create', $this->getResourceModel());
-
         $valuesToSave = $this->getValuesToSave($request);
+
         $request->merge($valuesToSave);
         $this->resourceValidate($request, 'store');
-
         if ($record = $this->getResourceModel()::create($this->alterValuesToSave($request, $valuesToSave))) {
             flash()->success('Element successfully inserted.');
-
             return $this->getRedirectAfterSave($record);
         } else {
             flash()->info('Element was not inserted.');
@@ -115,6 +114,7 @@ trait ResourceController
             'resourceAlias' => $this->getResourceAlias(),
             'resourceRoutesAlias' => $this->getResourceRoutesAlias(),
             'resourceTitle' => $this->getResourceTitle(),
+            'resourceData' => method_exists($this,'viewData')?$this->viewData():null
         ]));
     }
 

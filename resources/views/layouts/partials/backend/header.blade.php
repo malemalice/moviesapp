@@ -31,14 +31,14 @@
                 <!-- User Account -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{ Auth::user()->getLogoPath() }}" class="user-image"
+                        <img src="{{ URL::to('/').Auth::user()->getLogoPath() }}" class="user-image"
                              alt="{{ Auth::user()->name }}">
                         <span class="hidden-xs">{{ Auth::user()->name }}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="{{ Auth::user()->getLogoPath() }}" class="img-circle"
+                            <img src="{{ URL::to('/').Auth::user()->getLogoPath() }}" class="img-circle"
                                  alt="{{ Auth::user()->name }}">
 
                             <p>

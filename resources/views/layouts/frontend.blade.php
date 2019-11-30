@@ -25,6 +25,10 @@
         <link href="{{ cdn_asset('/adminlte/plugins/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css">
         <!-- datetimepicker -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+
+        <!-- datatables -->
+        <link href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css" rel="stylesheet" type="text/css">
+
         <!-- END - Plugins -->
 
         <!-- Theme CSS -->
@@ -110,6 +114,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
         <!-- DatetimePicker Js-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+        <!-- DataTables Js-->
+        <script src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
+
         <!-- END - Plugins -->
 
         <!-- AdminLTE App -->
