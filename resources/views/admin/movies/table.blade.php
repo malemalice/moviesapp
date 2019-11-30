@@ -1,4 +1,3 @@
-/* table.blade.php */
 <div class="table-responsive list-records">
     <table class="table table-hover table-bordered">
         <thead>

@@ -56,6 +56,7 @@ trait ResourceController
             'resourceAlias' => $this->getResourceAlias(),
             'resourceRoutesAlias' => $this->getResourceRoutesAlias(),
             'resourceTitle' => $this->getResourceTitle(),
+            'resourceData' => method_exists($this,'createData')?$this->createData():null
         ]));
     }
 
@@ -113,6 +114,7 @@ trait ResourceController
             'resourceAlias' => $this->getResourceAlias(),
             'resourceRoutesAlias' => $this->getResourceRoutesAlias(),
             'resourceTitle' => $this->getResourceTitle(),
+            'resourceData' => method_exists($this,'createData')?$this->createData():null
         ]));
     }
 

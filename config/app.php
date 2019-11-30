@@ -162,6 +162,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Collective\Html\HtmlServiceProvider::class,
+
+
     ],
 
     /*
@@ -214,6 +217,8 @@ return [
         'Flash' => Laracasts\Flash\Flash::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::class,
         'Carbon' => Carbon\Carbon::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

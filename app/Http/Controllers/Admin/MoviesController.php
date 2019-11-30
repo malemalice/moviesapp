@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Movies;
+use App\Models\Genre;
 use App\Traits\Controllers\ResourceController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -43,7 +44,7 @@ class MoviesController extends Controller
         return [
             'rules' => [
                 'name' => 'required|min:3|max:255',
-                'date_released' => 'required|date_released'
+                'date_released' => 'required'
             ],
             'messages' => [],
             'attributes' => [],
@@ -69,7 +70,7 @@ class MoviesController extends Controller
     private function getValuesToSave(Request $request, $record = null)
     {
         $values = $request->only([
-            'name', 'date_released',
+            'name', 'date_released','genre_id'
         ]);
 
         return $values;
@@ -90,5 +91,11 @@ class MoviesController extends Controller
         });
 
         return $query->paginate($perPage);
+    }
+
+    private function createData(){
+        return [
+            'optGenre'=>Genre::all()->pluck('name')->toArray()
+        ];
     }
 }
