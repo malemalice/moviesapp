@@ -106,6 +106,7 @@
 
         <!-- jQuery 3 -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
         <!-- Bootstrap 3.3.7 -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <!-- SlimScroll -->

@@ -15,5 +15,7 @@ class IndexController extends Controller
         }
 
         return view('dashboard.index');
+        // return view('frontend.movies.index');
+
     }
 }

@@ -50,6 +50,9 @@ Breadcrumbs::register('admin', function ($breadcrumbs) {
 // Admin / {Resource} / {List|Edit|Create}
 $resources = [
     'users' => 'Users',
+    'movies' => 'Movies',
+    'genre' => 'Genre',
+    'lending' => 'Lending',
 ];
 foreach ($resources as $resource => $data) {
     $parent = 'admin';
