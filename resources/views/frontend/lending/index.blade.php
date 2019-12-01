@@ -12,7 +12,8 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="box">
+    <div class="box-body">
             <table class="table table-bordered" id="myTable">
                <thead>
                   <tr>
@@ -25,6 +26,7 @@
                </thead>
             </table>
          </div>
+     </div>
     @yield('modal-form')
 @endsection
 

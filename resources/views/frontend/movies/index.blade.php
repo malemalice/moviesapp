@@ -12,20 +12,22 @@
 @endsection
 
 @section('content')
-    Hi, Movies
-    <div class="container">
-            <table class="table table-bordered" id="myTable">
-               <thead>
-                  <tr>
-                     <th>Movies</th>
-                     <th>Genre</th>
-                     <th>Release Date</th>
-                     <th>Status</th>
-                     <th>#</th>
-                  </tr>
-               </thead>
-            </table>
-         </div>
+    <div class="box">
+        <div class="box-body">
+                <table class="table table-bordered" id="myTable">
+                   <thead>
+                      <tr>
+                         <th>Movies</th>
+                         <th>Genre</th>
+                         <th>Release Date</th>
+                         <th>Status</th>
+                         <th>#</th>
+                      </tr>
+                   </thead>
+                </table>
+             </div>
+    </div>
+
     @yield('modal-form')
 @endsection
 

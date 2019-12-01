@@ -42,8 +42,8 @@ return [
     | Menu Logos
     |--------------------------------------------------------------------------
     */
-    'logo_lg'   => '<b>Admin</b>LTE',
-    'logo_mini' => '<b>A</b>LTE',
+    'logo_lg'   => '<b>Movies</b>Rental',
+    'logo_mini' => '<b>M</b>RL',
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
     |
     */
 
-    'credits' => 'Powered By: <a target="_blank" href="mailto:user@example.com">Developer</a>',
+    'credits' => 'Powered By: <a target="_blank" href="mailto:male.malice@gmail.com">developer</a>',
 
     /*
     |--------------------------------------------------------------------------
@@ -83,5 +83,5 @@ return [
     |
     */
 
-    'theme' => 'skin-blue',
+    'theme' => 'skin-purple',
 ];

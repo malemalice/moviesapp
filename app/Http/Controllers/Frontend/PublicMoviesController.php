@@ -53,6 +53,14 @@ class PublicMoviesController extends Controller
                 $html = '<div class="btn-group">
                         '.$action.'
                 </div>';
+
+                $lended = Lending::with('user')->where([
+                    'movies_id'=>$query->id,
+                    'date_returned_actual'=>null
+                ])->first();
+                if($lended){
+                    $html = '-';
+                }
                 return $html;
             })
             ->make(true);
