@@ -15,6 +15,11 @@ Route::get('/', 'WelcomeController@index')->name('welcome');
 
 Route::get('/movies', 'PublicMoviesController@index');
 Route::get('/movies/data', 'PublicMoviesController@data');
+Route::post('/movies/store', 'PublicMoviesController@store');
+
+Route::get('/lending', 'PublicLendingController@index');
+Route::get('/lending/data', 'PublicLendingController@data');
+Route::post('/lending/store', 'PublicLendingController@store');
 
 // Route::group(['prefix' => 'movies', 'namespace' => 'Movies', 'as' => 'movies::'], function () {
 //     Route::get('/', 'PublicMoviesController@index');

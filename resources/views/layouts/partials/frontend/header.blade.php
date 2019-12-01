@@ -13,6 +13,9 @@
             <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href={{URL::to('/movies')}}>Movies</a></li>
+                    @if (Auth::check())
+                        <li><a href={{URL::to('/lending')}}>My Movies</a></li>
+                    @endif
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
