@@ -18,15 +18,26 @@ class PublicMoviesController extends Controller
      */
     public function index()
     {
-        return view('frontend.movies');
+        return view('frontend.movies.index');
     }
 
     public function data()
     {
-        $query = Movies::all();
+        $query = Movies::isAllowed();
         return datatables()->of($query)
             ->addColumn('genre', function($query) {
                 return $query->genre->name;
+            })
+            ->addColumn('status', function($query) {
+                $html = 'Available';
+                $lended = Lending::with('user')->where([
+                    'movies_id'=>$query->id,
+                    'date_returned_actual'=>null
+                ])->first();
+                if($lended){
+                    $html = 'Lended by '.$lended->user->name.' until ' .$lended->date_returned;
+                }
+                return $html;
             })
             ->addColumn('action',function($query){
                 $action = '';

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Datatables, URL;
+use App\Utils;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
@@ -30,22 +31,20 @@ class PublicLendingController extends Controller
                 return $query->movies->name;
             })
             ->addColumn('action',function($query){
-                $action = URL::to('/movies/lend');
-                $action = '<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-form" onClick="setMovies('.$query->id.')">
-                            Return Movies
-                          </button>';
-
-                $html = '<div class="btn-group">
-                        '.$action.'
-                </div>';
+                $html = '';
+                if(!$query->date_returned_actual){
+                    $html = '<div class="btn-group"><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-form" onClick="setMovies('.$query->id.')">
+                                Return Movies
+                              </button></div>';
+                }
                 return $html;
             })
             ->make(true);
     }
 
     public function store(Request $request){
-        $today = Carbon::now(Utils::getTz())->startOfDay()->timezone('UTC');
-        $store = Lending::create(['date_returned_actual'=>$today]);
+        $today = Carbon::now()->timezone('UTC')->format('Y-m-d');
+        $store = Lending::find($request->id)->update(['date_returned_actual'=>$today]);
         if($store){
             flash()->success('successfully submitted');
         }

@@ -39,6 +39,7 @@
                     { data: 'movies', name: 'movies' },
                     { data: 'date_lending', name: 'date_lending' },
                     { data: 'date_returned', name: 'date_returned' },
+                    { data: 'date_returned_actual', name: 'date_returned_actual' },
                     { data: 'action', name: 'action' },
                  ]
         });

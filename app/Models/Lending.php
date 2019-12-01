@@ -30,4 +30,9 @@ class Lending extends Model
     {
         return $this->belongsTo('App\Models\Movies', 'movies_id');
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'member_id');
+    }
 }

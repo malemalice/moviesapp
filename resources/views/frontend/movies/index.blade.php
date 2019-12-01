@@ -20,6 +20,7 @@
                      <th>Movies</th>
                      <th>Genre</th>
                      <th>Release Date</th>
+                     <th>Status</th>
                      <th>#</th>
                   </tr>
                </thead>
@@ -39,6 +40,7 @@
                     { data: 'name', name: 'name' },
                     { data: 'genre', name: 'genre' },
                     { data: 'date_released', name: 'date_released' },
+                    { data: 'status', name: 'status' },
                     { data: 'action', name: 'action' },
                  ]
         });
@@ -46,4 +48,4 @@
     </script>
 @endpush
 
-@include('frontend.form')
+@include('frontend.movies.form')
