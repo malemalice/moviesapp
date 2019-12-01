@@ -3,7 +3,7 @@
     <nav class="navbar navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="/" class="navbar-brand">{!! config('adminlte.logo_lg') !!}</a>
+                <a href={{URL::to('/')}} class="navbar-brand">{!! config('adminlte.logo_lg') !!}</a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                   <i class="fa fa-bars"></i>
                 </button>
@@ -13,6 +13,9 @@
             <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href={{URL::to('/movies')}}>Movies</a></li>
+                    @if (Auth::check())
+                        <li><a href={{URL::to('/lending')}}>My Movies</a></li>
+                    @endif
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

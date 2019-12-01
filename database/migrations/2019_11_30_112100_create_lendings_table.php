@@ -19,7 +19,8 @@ class CreateLendingsTable extends Migration
             $table->string('member_id');
             $table->date('date_lending');
             $table->date('date_returned');
-            $table->float('lateness_charge');
+            $table->date('date_returned_actual')->nullable();
+            $table->float('lateness_charge')->nullable();
             $table->timestamps();
         });
     }

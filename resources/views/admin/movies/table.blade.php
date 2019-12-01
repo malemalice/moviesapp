@@ -2,8 +2,9 @@
     <table class="table table-hover table-bordered">
         <thead>
             <th>#</th>
-            <th>ID</th>
             <th>Name</th>
+            <th>Genre</th>
+            <th>Date Released</th>
             <th style="width: 100px;">Actions</th>
         </thead>
         <tbody>
@@ -21,11 +22,14 @@
                 <td>{{ $tableCounter }}</td>
                 <td>
                     @if ($canUpdate)
-                        <a href="{{ $editLink }}">{{ $record->id }}</a>
-                    @else {{ $record->id }} @endif
+                        <a href="{{ $editLink }}">{{ $record->name }}</a>
+                    @else {{ $record->name }} @endif
                 </td>
                 <td class="table-text">
-                    <a href="{{ $editLink }}">{{ $record->name }}</a>
+                    <a href="{{ $editLink }}">{{ $record->genre->name }}</a>
+                </td>
+                <td class="table-text">
+                    <a href="{{ $editLink }}">{{ $record->date_released }}</a>
                 </td>
                 <!-- we will also add show, edit, and delete buttons -->
                 <td>

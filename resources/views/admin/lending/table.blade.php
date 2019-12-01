@@ -2,8 +2,11 @@
     <table class="table table-hover table-bordered">
         <thead>
             <th>#</th>
-            <th>ID</th>
-            <th>Name</th>
+            <th>Movies</th>
+            <th>Member</th>
+            <th>Lending Date</th>
+            <th>Returned Date Plan</th>
+            <th>Returned Date Actual</th>
             <th style="width: 100px;">Actions</th>
         </thead>
         <tbody>
@@ -21,11 +24,20 @@
                 <td>{{ $tableCounter }}</td>
                 <td>
                     @if ($canUpdate)
-                        <a href="{{ $editLink }}">{{ $record->id }}</a>
-                    @else {{ $record->id }} @endif
+                        <a href="{{ $editLink }}">{{ $record->movies->name }}</a>
+                    @else {{ $record->movies->name }} @endif
                 </td>
                 <td class="table-text">
-                    <a href="{{ $editLink }}">{{ $record->name }}</a>
+                    <a href="{{ $editLink }}">{{ $record->user->name }}</a>
+                </td>
+                <td class="table-text">
+                    <a href="{{ $editLink }}">{{ $record->date_lending }}</a>
+                </td>
+                <td class="table-text">
+                    <a href="{{ $editLink }}">{{ $record->date_returned }}</a>
+                </td>
+                <td class="table-text">
+                    <a href="{{ $editLink }}">{{ $record->date_returned_actual }}</a>
                 </td>
                 <!-- we will also add show, edit, and delete buttons -->
                 <td>

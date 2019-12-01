@@ -15,7 +15,7 @@ class Lending extends Model
      * @var array
      */
     protected $fillable = [
-        'movies_id', 'member_id', 'date_lending', 'date_returned', 'lateness_charge'
+        'movies_id', 'member_id', 'date_lending', 'date_returned', 'lateness_charge', 'date_returned_actual'
     ];
 
     /**
@@ -24,5 +24,15 @@ class Lending extends Model
     public function getRecordTitle()
     {
         return 'record title';
+    }
+
+    public function movies()
+    {
+        return $this->belongsTo('App\Models\Movies', 'movies_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'member_id');
     }
 }

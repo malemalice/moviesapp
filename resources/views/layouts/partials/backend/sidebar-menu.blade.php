@@ -9,14 +9,14 @@
     @if (Auth::user()->can('manage', \App\Models\Lending::class))
      <li class="{{ \App\Utils::checkRoute(['admin::lending.index', 'admin::lending.create']) ? 'active': '' }}">
          <a href="{{ route('admin::lending.index') }}">
-             <i class="fa fa-tags"></i> <span>Lending</span>
+             <i class="fa fa-book"></i> <span>Lending</span>
          </a>
      </li>
     @endif
     @if (Auth::user()->can('manage', \App\Models\Movies::class))
        <li class="{{ \App\Utils::checkRoute(['admin::movies.index', 'admin::movies.create']) ? 'active': '' }}">
            <a href="{{ route('admin::movies.index') }}">
-               <i class="fa fa-tags"></i> <span>Movies</span>
+               <i class="fa fa-film"></i> <span>Movies</span>
            </a>
        </li>
    @endif
